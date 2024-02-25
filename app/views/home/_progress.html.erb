@@ -7,6 +7,10 @@
     <div class="flex w-full -mb-10 lg:-mb-12">
       <div class="flex flex-col items-center" style="margin-left: calc(<%= percentage_done(statistics) %>% - 228px);">
         <div class="flex flex-row flex-nowrap items-end">
+          <% (3 - statistics.previous_champions.count).times do %>
+            <div class="max-w-none w-14 h-14">
+            </div>
+          <% end %>
           <% statistics.previous_champions.limit(3).reverse.each.with_index do |prev_champ, index| %>
             <%= link_to "##{prev_champ.statistics_id}" do %>
               <%= image_tag prev_champ.image_url,
@@ -36,7 +40,7 @@
     </div>
   <% end %>
   <div class="w-full lg:h-12 h-10 bg-gray-200 rounded-full dark:bg-gray-700">
-    <%= content_tag :div, class: "lg:h-12 h-10 bg-[#255941] rounded-l-full flex items-center justify-center #{'rounded-r-full' if statistics.challenge_finished?}", style: "width: #{percentage_done(statistics)}%" do %>
+    <%= content_tag :div, class: "lg:h-12 h-10 bg-[#255941] rounded-l-full flex items-center justify-center #{'rounded-r-full' if statistics.challenge_finished? || statistics.next_champions.count < 5 }", style: "width: #{percentage_done(statistics)}%" do %>
       <span class="text-xs sm:text-normal md:text-xl whitespace-nowrap text-[#EAF9F2] count" id="progress">
         <%= statistics.finished_champions.length %> / <%= statistics.total_champions.count %>
       </span>
@@ -46,11 +50,8 @@
 
 
 <% if overlay %>
-  <div class="text-center">
-    <h2 class="-mt-2 neon text-5xl md:text-7xl">NoWay4u</h2>
-  </div>
-  <div class="text-left -mt-12 pl-2">
-    <%= link_to "https://a-z.noway.gg", "https://a-z.noway.gg", class: "text-lg text-white info" %>
+  <div class="text-left mt-4 pl-2">
+    <%= link_to "https://a-z.karni.gg", "https://a-z.karni.gg", class: "text-lg text-white info" %>
   </div>
   <div class="w-full text-right -mt-8 pr-2">
     <%= link_to "Created by @Aimaard", "https://siegrist.io", class: "text-xs text-white info" %>

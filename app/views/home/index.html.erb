@@ -2,7 +2,7 @@
 
 <% unless @overlay %>
   <div class="flex flex-row max-w-4xl mx-auto">
-    <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
+    <a href="https://twitch.tv/karni" target="_blank" class="flex items-center">
       <%= fa_icon "twitch", class: 'mr-1' %> <span class="uppercase">Twitch</span>
     </a>
     <span class="mx-2">|</span>
@@ -10,21 +10,17 @@
       <span class="uppercase">op.gg</span>
     </a>
     <span class="mx-2">|</span>
-    <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
-      <span class="uppercase">Impressum,&nbsp;</span>
-    </a>
-    <a href="https://www.noway.gg/privacy" target="_blank" class="flex items-center">
-      <span class="uppercase">Datenschutz</span>
+    <a href="https://twitch.tv/karni" target="_blank" class="flex items-center">
+      <span class="uppercase">Impressum</span>
     </a>
   </div>
 
   <div class="flex justify-center items-center mt-14">
     <div>
-      <h1 class="retro">
-        <span class="text-5xl sm:text-6xl neon-back md:text-8xl lg:text-9xl">Das große A-Z</span>
-        <span class="text-5xl sm:text-6xl neon-front md:text-8xl lg:text-9xl">Das große A-Z</span>
+      <%= image_tag "karni.png", class: "h-48 w-48 rounded-full" %>
+      <h1 class="neon text-center -mt-7 text-3xl sm:text-5xl md:text-7xl">
+        A-Z
       </h1>
-      <h2 class="text-center -mt-4 neon text-3xl sm:text-5xl md:text-7xl">NoWay4u</h2>
     </div>
   </div>
 <% end %>
@@ -108,6 +104,6 @@
 
 <% unless @overlay %>
   <div class="max-w-4xl w-full mx-auto text-center my-6 text-xs">
-    Bug reports entweder via Discord an <a href="discord://-/channels/@me/275288704497745920" class="text-blue-500">@aimaard</a> oder im Twitch chat von Noway @Aimaard taggen.
+    Bug reports via Discord an <a href="discord://-/channels/@me/275288704497745920" class="text-blue-500">@aimaard</a>.
   </div>
 <% end %>

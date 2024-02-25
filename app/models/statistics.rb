@@ -8,6 +8,8 @@ class Statistics
   end
 
   def winrate
+    return 0 if Match.count.zero?
+
     (Match.where(win: true).count / Match.count.to_f * 100).round
   end
 
