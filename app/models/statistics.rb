@@ -13,7 +13,7 @@ class Statistics
     (Match.where(win: true).count / Match.count.to_f * 100).round
   end
 
-  START_DATE = Date.parse("2024-02-08")
+  START_DATE = Date.parse("2024-03-01")
   def duration
     (Date.today - START_DATE).to_i.days
   end
