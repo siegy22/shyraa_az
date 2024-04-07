@@ -40,7 +40,7 @@
   <div class="flex flex-row flex-wrap max-w-4xl mx-auto mt-16 justify-around">
     <%= render "home/statistic_card", label: 'Spiele', value: @statistics.total_games, id: 'games' %>
     <%= render "home/statistic_card", label: 'Winrate', value: "#{@statistics.winrate}%", id: 'winrate' %>
-    <%= render "home/statistic_card", label: 'Dauer', value: distance_of_time_in_words(@statistics.duration), id: 'duration' %>
+    <%= render "home/statistic_card", label: 'Dauer', value: "#{@statistics.duration.in_days.to_i} Tage", id: 'duration' %>
   </div>
 
   <div class="flex flex-col items-center mt-20">
